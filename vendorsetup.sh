@@ -17,7 +17,7 @@
 #
 # 	Please maintain this if you use this script or any part of it
 #
-FDEVICE="a51"
+FDEVICE="exynos9611"
 #set -o xtrace
 
 fox_get_target_device() {
@@ -62,8 +62,8 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 		export OF_HIDE_NOTCH=1
 		export OF_CLOCK_POS=1
 		export OF_ALLOW_DISABLE_NAVBAR=0
-		export TARGET_DEVICE_ALT="a51, a51ns, a51nsxx"
-		export OF_TARGET_DEVICES="a51, a51ns, a51nsxx"
+		export TARGET_DEVICE_ALT="m31, m31nsxx, m21, m21nsxx, f41"
+		export OF_TARGET_DEVICES="m31, m21, f41"
 		export OF_USE_SYSTEM_FINGERPRINT=1
 		export OF_USE_TWRP_SAR_DETECT=1
 		export OF_QUICK_BACKUP_LIST="/super;/boot;/vbmeta;/vbmeta_samsung;/dtbo;"
@@ -85,7 +85,7 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 		export OF_RUN_POST_FORMAT_PROCESS=1
 
 		export OF_USE_CUSTOM_MAINTAINER_PIC=1
-		export OF_CUSTOM_MAINTAINER_PIC_PATH="$PWD/device/samsung/a51/maintainer.png"
+		export OF_CUSTOM_MAINTAINER_PIC_PATH="$PWD/device/samsung/exynos9611/maintainer.png"
 
 		# let's see what are our build VARs
 		if [ -n "$FOX_BUILD_LOG_FILE" -a -f "$FOX_BUILD_LOG_FILE" ]; then

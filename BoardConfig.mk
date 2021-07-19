@@ -11,7 +11,7 @@
 # limitations under the License.
 #
 
-DEVICE_PATH := device/samsung/a51
+DEVICE_PATH := device/samsung/exynos9611
 
 # Architecture
 TARGET_ARCH := arm64
@@ -39,14 +39,13 @@ TARGET_NO_RADIOIMAGE := true
 TARGET_BOARD_PLATFORM := exynos9611
 TARGET_BOARD_PLATFORM_GPU := mali-g72
 PLATFORM_SECURITY_PATCH := 2021-05-01
-PLATFORM_VERSION := 11
 
 # Kernel
 BOARD_KERNEL_BASE := 0x10000000
 BOARD_KERNEL_PAGESIZE := 2048
 TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/11/Image
-#TARGET_KERNEL_SOURCE := kernel/samsung/a51
-#TARGET_KERNEL_CONFIG := exynos9610-a51xx_caliban_defconfig
+#TARGET_KERNEL_SOURCE := kernel/samsung/universal9611
+#TARGET_KERNEL_CONFIG := exynos9610-m21xx_defconfig
 BOARD_KERNEL_CMDLINE := androidboot.hardware=exynos9611
 BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000 --ramdisk_offset 0x01000000 --tags_offset 0x00000100 --header_version 2 --board SRPSG30B004RU
 BOARD_KERNEL_IMAGE_NAME := Image
