@@ -6,5 +6,5 @@ To build:
 
 ```sh
 . build/envsetup.sh
-lunch omni_exynos9611-eng
+lunch twrp_exynos9611-eng
 mka recoveryimage
