@@ -11,7 +11,9 @@
 # limitations under the License.
 #
 
-DEVICE_PATH := device/samsung/exynos9611
+# Device codename
+SHRP_DEVICE_CODE := exynos9611
+SHRP_PATH := device/samsung/$(SHRP_DEVICE_CODE)
 
 # Architecture
 TARGET_ARCH := arm64
@@ -43,7 +45,7 @@ PLATFORM_SECURITY_PATCH := 2021-05-01
 # Kernel
 BOARD_KERNEL_BASE := 0x10000000
 BOARD_KERNEL_PAGESIZE := 2048
-TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/11/Image
+TARGET_PREBUILT_KERNEL := $(SHRP_PATH)/prebuilt/11/Image
 #TARGET_KERNEL_SOURCE := kernel/samsung/universal9611
 #TARGET_KERNEL_CONFIG := exynos9610-m21xx_defconfig
 BOARD_KERNEL_CMDLINE := androidboot.hardware=exynos9611
@@ -110,9 +112,11 @@ TW_EXTRA_LANGUAGES := true
 TW_EXCLUDE_DEFAULT_USB_INIT := true
 TWRP_INCLUDE_LOGCAT := true
 TARGET_USES_LOGD := true
+TW_EXCLUDE_BASH := true
+TW_EXCLUDE_NANO := true
 BOARD_INCLUDE_RECOVERY_DTBO := true
-BOARD_PREBUILT_DTBOIMAGE := $(DEVICE_PATH)/prebuilt/11/dtbo.img
-BOARD_PREBUILT_DTBIMAGE_DIR := $(DEVICE_PATH)/prebuilt/11/dtb
+BOARD_PREBUILT_DTBOIMAGE := $(SHRP_PATH)/prebuilt/11/dtbo.img
+BOARD_PREBUILT_DTBIMAGE_DIR := $(SHRP_PATH)/prebuilt/11/dtb
 BOARD_INCLUDE_DTB_IN_BOOTIMG := true
 
 # ANDROID VERIFIED BOOT
@@ -128,3 +132,24 @@ BOARD_AVB_RECOVERY_ROLLBACK_INDEX_LOCATION := 1
 BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --flags 0
 BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --algorithm NONE
 endif # BOARD_AVB_ENABLE
+
+# Maintainer name
+SHRP_MAINTAINER := Yillié
+
+# Recovery Type (for "About" section only)
+SHRP_REC_TYPE := SAR
+
+# Device Type (for "About" section only)
+SHRP_DEVICE_TYPE := A_Only
+
+SHRP_REC := /dev/block/by-name/recovery
+SHRP_EXTERNAL := /sdcard1
+SHRP_OTG := /usb_otg
+SHRP_FLASH := 1
+SHRP_STATUSBAR_RIGHT_PADDING := 48
+SHRP_STATUSBAR_LEFT_PADDING := 48
+
+# custom led paths for flashlight
+SHRP_CUSTOM_FLASHLIGHT := true
+SHRP_FONP_1 := /sys/devices/virtual/camera/flash/rear_flash
+SHRP_FLASH_MAX_BRIGHTNESS := 1 # Value to echo to the flashlight file
