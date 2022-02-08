@@ -6,5 +6,6 @@ To build:
 
 ```sh
 . build/envsetup.sh
+export ALLOW_MISSING_DEPENDENCIES=true
 lunch twrp_exynos9611-eng
-mka recoveryimage
+mka recoveryimage```
