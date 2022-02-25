@@ -14,9 +14,9 @@
 DEVICE_PATH := device/samsung/exynos9611
 
 # Kernel
-TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/11/Image
-BOARD_PREBUILT_DTBOIMAGE := $(DEVICE_PATH)/prebuilt/11/dtbo.img
-BOARD_PREBUILT_DTBIMAGE_DIR := $(DEVICE_PATH)/prebuilt/11/dtb
+TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilts/zImage
+BOARD_PREBUILT_DTBOIMAGE := $(DEVICE_PATH)/prebuilts/dtbo.img
+BOARD_PREBUILT_DTBIMAGE_DIR := $(DEVICE_PATH)/prebuilts/dtb
 
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/files/init.recovery.exynos9611.rc:$(TARGET_COPY_OUT_RECOVERY)/root/init.recovery.exynos9611.rc \
