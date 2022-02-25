@@ -14,9 +14,15 @@
 DEVICE_PATH := device/samsung/exynos9611
 
 # Kernel
-TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilts/zImage
-BOARD_PREBUILT_DTBOIMAGE := $(DEVICE_PATH)/prebuilts/dtbo.img
-BOARD_PREBUILT_DTBIMAGE_DIR := $(DEVICE_PATH)/prebuilts/dtb
+#BUILD_KERNEL_FROM_SOURCE := true
+ifeq ($(BUILD_KERNEL_FROM_SOURCE), true)
+	TARGET_KERNEL_CONFIG := celicia-rec-m21_defconfig
+	BOARD_DTBO_CFG := $(DEVICE_PATH)/kernel/m21.cfg
+else
+	TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilts/zImage
+	BOARD_PREBUILT_DTBOIMAGE := $(DEVICE_PATH)/prebuilts/dtbo.img
+	BOARD_PREBUILT_DTBIMAGE_DIR := $(DEVICE_PATH)/prebuilts/dtb
+endif
 
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/files/init.recovery.exynos9611.rc:$(TARGET_COPY_OUT_RECOVERY)/root/init.recovery.exynos9611.rc \
