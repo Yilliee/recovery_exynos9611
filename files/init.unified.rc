@@ -5,12 +5,6 @@ service unified-script /system/bin/unified-script.sh
     oneshot
     seclabel u:r:recovery:s0
 
-on init
-    # unlink /efs > /mnt/vendor/efs
-    rm /efs
-    mkdir /efs
-    mkdir /sec_efs
-
 on boot
    setprop ro.unified.script "true"
 

@@ -25,7 +25,7 @@ else
 endif
 
 PRODUCT_COPY_FILES += \
-    $(DEVICE_PATH)/files/init.recovery.exynos9611.rc:$(TARGET_COPY_OUT_RECOVERY)/root/init.recovery.exynos9611.rc \
+    $(DEVICE_PATH)/files/init.unified.rc:$(TARGET_COPY_OUT_RECOVERY)/root/init.unified.rc \
     $(DEVICE_PATH)/files/unified-script.sh:$(TARGET_COPY_OUT_RECOVERY)/root/system/bin/unified-script.sh \
 
 # Inherit from universal9611-common tree
